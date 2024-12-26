@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+    <!--file js-->
+    <script  src="assets/style/js/jquery-3.7.1.min.js"></script>
+    <style>
+      .tab {
+        display: none; /*sembunyikan semua*/
+      }
+      .tab-button {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        display: inline-block;
+      }
+      .active {
+        background-color: #ccc; /*gaya untuk tab yang aktip */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>tugas developer</h1>
+    <div>
+      <div class="tab-button active" data-tab="tab1">Tab 1</div>
+      <div class="tab-button" data-tab="tab2">Tab 2</div>
+      <div class="tab-button" data-tab="tab3">Tab 3</div>
+    </div>
+    <div id="tab1" class="tab" style="display: block">
+      <h2>Fron-End Developer</h2>
+      <p>
+        mengoptimalkan fungsi aplikasi berdasarkan user interface (ui) dan user
+        expariance
+      </p>
+    </div>
+    <div id="tab2" class="tab">
+      <h2>Back-End Developer</h2>
+      <p>
+        berjalan di sisi server dengan mengelola data menajadi informasi dari
+        data base
+      </p>
+    </div>
+    <div id="tab3" class="tab">
+      <h2> Full-Stack Developer</h2>
+      <p> memeliki kemampuan dua sisi  yaitu fron End dan Back-End, sehingga dapat menangani semua aspek pengembang web</p>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $(".tab-button").click(function (){
+          $(".tab").hide();
+
+          $(".tab_button").removeClass("active");
+
+          tabToshow = $(this).data("tab");
+          $('#' +tabToshow).show();
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>

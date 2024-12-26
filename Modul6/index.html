@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show/Hide Image</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #image {
+      display: none; /* Gambar disembunyikan secara default */
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <button id="toggleButton">Tampilkan Gambar</button>
+  <br><br>
+  <img id="image" src="assets/img/Gambar WhatsApp 2024-11-09 pukul 20.53.46_b76a3680.jpg" alt="image">
+
+  <script>
+    $(document).ready(function() {
+      $('#toggleButton').click(function() {
+        const image = $('#image');
+        if (image.is(':visible')) {
+          image.hide(); // Sembunyikan gambar
+          $(this).text('Tampilkan Gambar'); // Ubah teks tombol
+        } else {
+          image.show(); // Tampilkan gambar
+          $(this).text('Sembunyikan Gambar'); // Ubah teks tombol
+        }
+      });
+    });
+  </script>
+</body>
+</html>
