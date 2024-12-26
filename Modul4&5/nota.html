@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nota Pemesanan</title>
+  <style>
+    body {
+      font-family: 'Cascadia Mono', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 40px 0;
+    }
+
+    #nota {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      margin: 0 auto;
+      max-width: 650px;
+      border-top: 4px solid #3498db; /* Biru mewah di bagian atas */
+    }
+
+    h3 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 28px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #34495e;
+      margin: 12px 0;
+    }
+
+    p strong {
+      color: #2980b9; /* Biru untuk label yang lebih menonjol */
+    }
+
+    .nota-label {
+      font-weight: bold;
+      color: #2980b9; /* Biru menonjol */
+    }
+
+    .nota-footer {
+      text-align: center;
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-top: 30px;
+    }
+
+    .nota-footer a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nota-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Styling untuk menampilkan border di sekitar tiap elemen nota */
+    #nota p {
+      border-bottom: 1px solid #ecf0f1;
+      padding-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="nota">
+    <h3>NOTA PEMESANAN</h3>
+    <p id="notaNamaPemesan" class="nota-label"></p>
+    <p id="notaJenisKelamin" class="nota-label"></p>
+    <p id="notaNomorIdentitas" class="nota-label"></p>
+    <p id="notaTanggalPesan" class="nota-label"></p>
+    <p id="notaDurasi" class="nota-label"></p>
+    <p id="notaDiskon" class="nota-label"></p>
+    <p id="notaTotalBayar" class="nota-label"></p>
+    <div class="nota-footer">
+      <p>Terima kasih telah memesan dengan kami!</p>
+      <p><a href="tugasnomer3.html">Kembali ke halaman utama</a></p>
+    </div>
+  </div>
+
+  <script>
+    // Fungsi untuk mendapatkan parameter dari query string
+    function getQueryParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Ambil data dari query string
+    const namaPemesan = getQueryParameter("namaPemesan");
+    const jenisKelamin = getQueryParameter("jenisKelamin");
+    const nomorIdentitas = getQueryParameter("nomorIdentitas");
+    const tanggalPesan = getQueryParameter("tanggalPesan");
+    const durasi = getQueryParameter("durasi");
+    const diskon = parseFloat(getQueryParameter("diskon"));
+    const totalHarga = parseFloat(getQueryParameter("totalHarga"));
+
+    // Tampilkan data ke halaman nota
+    document.getElementById("notaNamaPemesan").textContent = `Nama Pemesan: ${namaPemesan}`;
+    document.getElementById("notaJenisKelamin").textContent = `Jenis Kelamin: ${jenisKelamin}`;
+    document.getElementById("notaNomorIdentitas").textContent = `Nomor Identitas: ${nomorIdentitas}`;
+    document.getElementById("notaTanggalPesan").textContent = `Tanggal Pesan: ${tanggalPesan}`;
+    document.getElementById("notaDurasi").textContent = `Durasi Menginap: ${durasi} hari`;
+    document.getElementById("notaDiskon").textContent = `Diskon: ${diskon.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}`;
+    document.getElementById("notaTotalBayar").textContent = `Total Bayar: ${totalHarga.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}`;
+  </script>
+</body>
+</html>

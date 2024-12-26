@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pemesanan</title>
+  <link rel="stylesheet" href="Assets/css/tugasnomer3.css">
+  <script src="Assets/js/tugasnomer3.js"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Form Pemesanan</h2>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="namaPemesan">Nama Pemesan:</label>
+        <input type="text" id="namaPemesan" name="namaPemesan" required placeholder="Isi dengan nama pemesan">
+      </div>
+      <div class="form-group">
+        <label for="jenisKelamin">Jenis Kelamin:</label>
+        <select id="jenisKelamin" name="jenisKelamin" required>
+          <option value="">Pilih Laki-Laki atau Perempuan</option>
+          <option value="Laki-Laki">Laki-Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nomorIdentitas">Nomor Identitas:</label>
+        <input type="text" id="nomorIdentitas" name="nomorIdentitas" required placeholder="Isi dengan angka 16 digit">
+      </div>
+      <div class="form-group">
+        <label for="tipeKamar">Tipe Kamar:</label>
+        <select id="tipeKamar" name="tipeKamar" required>
+          <option value="">Pilih Tipe Kamar</option>
+          <option value="standar">Standar</option>
+          <option value="deluxe">Deluxe</option>
+          <option value="family">Family</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="harga">Harga :</label>
+        <input type="number" id="harga" name="harga" required placeholder="Isi harga per malam">
+      </div>
+      <div class="form-group">
+        <label for="tanggalPesan">Tanggal Pesan:</label>
+        <input type="date" id="tanggalPesan" name="tanggalPesan" required placeholder="dd/mm/yyyy">
+      </div>
+      <div class="form-group">
+        <label for="durasiMenginap">Durasi Menginap (Hari):</label>
+        <input type="number" id="durasiMenginap" name="durasiMenginap" required placeholder="Isi dengan angka">
+      </div>
+      <div class="form-group">
+        <label for="breakfast">Termasuk Breakfast (Rp 80.000):</label>
+        <input type="checkbox" id="breakfast" name="breakfast">
+      </div>
+      <div class="form-actions">
+        <button type="button" class="simpan" onclick="simpanPemesanan()">Simpan</button>
+        <button type="reset" class="batal">Batal</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Tambah Data Kamar</title>
+    <link rel="stylesheet" href="Assets/css/tambahKamar.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Form Tambah Data Kamar</h1>
+
+      <form
+        id="tambahKamarForm"
+        action="#"
+        method="post"
+        enctype="multipart/form-data"
+        onsubmit="return validasiForm()"
+      >
+        <div class="form-group">
+          <label for="id_kamar">ID Kamar :</label>
+          <input type="number" name="id_kamar" id="id_kamar" required />
+        </div>
+
+        <div class="form-group">
+          <label for="gambar_ruangan">Gambar Ruangan :</label>
+          <input
+            type="file"
+            name="gambar_ruangan"
+            id="gambar_ruangan"
+            accept="image/*"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="jenis_kamar">Jenis Kamar :</label>
+          <select name="jenis_kamar" id="jenis_kamar" required>
+            <option value="pilih">--Pilih--</option>
+            <option value="Standar">Standar</option>
+            <option value="Deluxe">Deluxe</option>
+            <option value="Family">Family</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="harga">Harga :</label>
+          <input type="number" name="harga" id="harga" required />
+        </div>
+
+        <div class="form-group">
+          <label for="fasilitas">Fasilitas :</label>
+          <textarea
+            name="fasilitas"
+            id="fasilitas"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+
+        <div class="button-container">
+          <button type="submit" name="submit" value="submit">SIMPAN</button>
+          <button type="reset" name="reset" value="reset">BATAL</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validasiForm() {
+        // Mendapatkan elemen dari form
+        const idKamar = document.getElementById("id_kamar").value;
+        const gambarRuangan =
+          document.getElementById("gambar_ruangan").files[0];
+        const jenisKamar = document.getElementById("jenis_kamar").value;
+        const harga = document.getElementById("harga").value;
+        const fasilitas = document.getElementById("fasilitas").value;
+
+        // Validasi ID Kamar (harus lebih dari 0)
+        if (idKamar <= 0) {
+          alert("ID Kamar harus lebih dari 0.");
+          return false;
+        }
+
+        // Validasi gambar (pastikan file yang diunggah adalah gambar)
+        if (!gambarRuangan || !gambarRuangan.type.startsWith("image/")) {
+          alert("Mohon unggah gambar yang valid untuk ruangan.");
+          return false;
+        }
+
+        // Validasi Pilihan Jenis Kamar
+        if (jenisKamar === "pilih") {
+          alert("Pilih jenis kamar yang valid.");
+          return false;
+        }
+
+        // Validasi Harga (harus lebih dari 0)
+        if (harga <= 0) {
+          alert("Harga kamar harus lebih dari 0.");
+          return false;
+        }
+
+        // Validasi Fasilitas (tidak boleh kosong)
+        if (fasilitas.trim() === "") {
+          alert("Fasilitas tidak boleh kosong.");
+          return false;
+        }
+
+        // Jika semua validasi lulus, form akan disubmit
+        alert("Data Kamar berhasil disimpan!");
+        return true;
+      }       
+    </script>
+  </body>
+</html>
