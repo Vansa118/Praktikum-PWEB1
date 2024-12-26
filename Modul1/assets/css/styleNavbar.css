@@ -1,0 +1,90 @@
+/* Style dasar untuk navbar */
+body {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    margin: 0%;
+  }
+  nav {
+    background-color: goldenrod;
+    color: black;
+    padding: 15px;
+    text-align: left;
+  }
+  nav a {
+    color: black;
+    margin: 0 20px; /* Diperbesar jarak untuk memperluas area klik */
+    padding: 10px 15px; /* Tambahkan padding untuk memperluas area hover */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s; /* Transisi untuk warna */
+  }
+  /* Efek hover untuk item navbar dan submenu */
+  nav a:hover,
+  .submenu a:hover,
+  .submenu2 a:hover,
+  .submenu3 a:hover {
+    background-color: burlywood; /* Ubah latar belakang saat hover */
+    color: #fff; /* Ubah warna teks saat hover */
+  }
+  /* Container utama untuk menu */
+  .menu {
+    display: inline-block;
+    position: relative;
+  }
+  /* Submenu */
+  .submenu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: whitesmoke;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 1;
+    transition: visibility 0s linear 0.3s, opacity 0.3s;
+  }
+  /* Submenu level kedua */
+  .submenu2 {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: whitesmoke;
+    left: 100%;
+    top: 0;
+    min-width: 200px;
+    padding: 10px;
+    z-index: 2;
+    transition: visibility 0s linear 0.3s, opacity 0.3s;
+  }
+  /* Submenu level ketiga */
+  .submenu3 {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: whitesmoke;
+    left: 100%;
+    top: 0;
+    min-width: 200px;
+    padding: 10px;
+    z-index: 3;
+    transition: visibility 0s linear 0.3s, opacity 0.3s;
+  }
+  /* Tampilkan submenu saat hover */
+  .menu:hover .submenu,
+  .submenu-item:hover .submenu2,
+  .submenu2-item:hover .submenu3 {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+  }
+  /* Submenu a link style */
+  .submenu a,
+  .submenu2 a,
+  .submenu3 a {
+    color: black;
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+  }
