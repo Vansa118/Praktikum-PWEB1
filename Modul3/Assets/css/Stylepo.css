@@ -1,0 +1,64 @@
+ {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 5px solid #000150;
+  border-radius: 30px;
+  background: silver;
+}
+
+img {
+    border: 4px solid #000150;
+    width: 350px;
+    padding: 10px;
+}
+
+.card .content h1 {
+  display: block;
+  text-align: left;
+}
+
+.card .content p {
+  text-align: justify;
+}
+
+.card .content a {
+    display: block;
+    text-align: right;
+}
+
+
+.toggle-checkbox {
+    display: none;
+}
+
+
+.extra-content {
+    display: none;
+}
+
+
+.toggle-checkbox:checked ~ .extra-content {
+    display: block;
+}
+
+/
+.toggle-checkbox:checked + .toggle-label::after {
+    content: "Baca Lebih Sedikit";
+}
+
+.toggle-label::after {
+    content: "Baca Selengkapnya...";
+    color: #000150;
+    cursor: pointer;
+}
+[14.29, 8/11/2024] Alika: <!DOCTYPE html>
