@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Asset/css/tugas2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Form Tambah Data Kamar</h1>
+  
+        <form action="#" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="id_kamar">ID Kamar :</label>
+            <input type="number" name="id_kamar" id="id_kamar" required />
+          </div>
+  
+          <div class="form-group">
+            <label for="gambar_ruangan">Gambar Ruangan :</label>
+            <input type="file" name="gambar_ruangan" id="gambar_ruangan" accept="image/*" required />
+          </div>
+  
+          <div class="form-group">
+            <label for="jenis_kamar">Jenis Kamar :</label>
+            <select name="jenis_kamar" id="jenis_kamar" required>
+              <option value="pilih">--Pilih--</option>
+              <option value="Standar">Standar</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Family">Family</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="harga">Harga :</label>
+            <input type="number" name="harga" id="harga" required />
+          </div>
+  
+          <div class="form-group">
+            <label for="fasilitas">Fasilitas :</label>
+            <textarea name="fasilitas" id="fasilitas" rows="3" required></textarea>
+          </div>
+  
+          <div class="button-container">
+            <button type="submit" name="submit" value="submit">SIMPAN</button>
+            <button type="reset" name="reset" value="reset">BATAL</button>
+          </div>
+        </form>
+      </div>
+</body>
+</html>
